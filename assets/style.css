@@ -6,6 +6,7 @@
 	text-decoration: none;
 	list-style: none;
 	font-family: "Montserrat", sans-serif;
+	max-width: 100vw;
 }
 button {
 	cursor: pointer;
@@ -164,6 +165,7 @@ h1 {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 	margin-bottom: 150px;
+	padding: 20px;
 }
 .grid-box > div {
 	background-size: cover;
@@ -279,4 +281,75 @@ footer {
 	width: 100%;
 	height: 100px;
 	border: 1px solid black;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.hero {
+		text-align: center;
+	}
+	.nav-container > ul {
+		display: none;
+	}
+	.grid-box {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 15px;
+	}
+
+	.div1 {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+	.div2 {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+	.div3 {
+		grid-area: 3 / 1 / 4 / 2;
+	}
+	.div4 {
+		grid-area: 4 / 1 / 5 / 2;
+	}
+	.grid-box > div > h3 {
+		font-size: 20px;
+	}
+	.categories-container {
+		width: 80%;
+		margin-bottom: 50px;
+	}
+	.store-container {
+		height: auto;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	#listItems {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#listItems > li > img {
+		width: 100%;
+		height: auto;
+	}
+	.info-item {
+		text-align: center;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
