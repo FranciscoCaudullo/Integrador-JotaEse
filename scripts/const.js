@@ -1,6 +1,16 @@
 const listItems = document.getElementById("listItems");
 const categoriesList = document.getElementById("categoriesList");
 const allCategories = document.querySelectorAll(".category");
+const menuhamburguerIcon = document.querySelector(".hamburger");
+const menuHamburguer = document.querySelector(".menuppal");
+const portada = document.getElementsByClassName("portada");
+
+const photos = [
+	"./assets/img/japan.jpg",
+	"./assets/img/fua.jpg",
+	"./assets/img/clean.webp",
+	"./assets/img/cleanardo.webp",
+];
 const motherList = [
 	{
 		name: "Honey Milk",

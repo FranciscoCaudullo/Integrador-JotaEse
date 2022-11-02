@@ -30,6 +30,86 @@ body {
 .logo > span > img {
 	width: 60px;
 }
+.hamburger {
+	position: fixed;
+	background-color: transparent;
+	left: 0;
+	top: 0;
+	height: 30px;
+	width: 30px;
+	padding: 20px 20px;
+	transform: translate3d(0, 0, 0);
+	transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	z-index: 1002;
+	cursor: pointer;
+	user-select: none;
+}
+.hamburger.is-active {
+	background-color: none;
+}
+._layer {
+	background: #333333;
+	margin-bottom: 4px;
+	border-radius: 2px;
+	width: 28px;
+	height: 4px;
+	opacity: 1;
+
+	transform: translate3d(0, 0, 0);
+	transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top {
+	transform: translateY(-100%);
+}
+.hamburger:hover .-bottom {
+	transform: translateY(100%);
+}
+
+.menuppal.is_active {
+	transform: translate3d(0px, 0px, 0px);
+}
+.menuppal {
+	background-color: rgb(207 233 189);
+	bottom: 0;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 30%;
+	position: fixed;
+	transform: translate3d(-100%, 0px, 0px);
+	transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+	z-index: 20;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	/* box-shadow: 3px 0px 3px 1px rgba(0, 0, 0, 0.75); */
+}
+.menuppal ul {
+	margin: 0;
+	padding: 0;
+}
+.menuppal ul li {
+	list-style: none;
+	text-align: center;
+	font-family: Verdadna, Arial, Helvetica;
+	color: white;
+	font-size: 1.5rem;
+	line-height: 3em;
+	height: 3em;
+	color: black;
+	font-weight: bold;
+	padding: 60px;
+}
+
+.menuppal ul li a {
+	text-decoration: none;
+	color: black;
+}
+.menuppal ul li a:hover {
+	text-decoration: underline;
+	color: #333;
+}
 nav {
 	width: 100%;
 	height: 70px;
@@ -84,7 +164,7 @@ nav {
 /* PORTADA */
 .portada {
 	width: 100%;
-	height: 100vh;
+	height: 70vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -95,6 +175,7 @@ nav {
 	background-repeat: no-repeat;
 	/* filter: blur(1px);
 	position: relative; */
+	background-attachment: fixed;
 }
 .titulo {
 	position: absolute;
@@ -115,10 +196,7 @@ h1 {
 .portada > h2 {
 	font-weight: 400;
 }
-.blur {
-	width: 100%;
-	height: 100%;
-}
+
 .portada > button {
 	width: 100px;
 	height: 30px;
@@ -132,7 +210,7 @@ h1 {
 	justify-content: center;
 	flex-direction: column;
 	gap: 30px;
-	margin: 80px 0px 80px 0px;
+	margin: -40px 0px 80px 0px;
 }
 .line {
 	width: 50%;
@@ -149,7 +227,7 @@ h1 {
 	width: 180px;
 	height: 35px;
 	border: none;
-	background-color: burlywood;
+	background-color: #ff5e16;
 	border-radius: 10px;
 	font-size: 18px;
 	font-weight: 600;
@@ -205,6 +283,8 @@ h1 {
 	opacity: 1;
 	backdrop-filter: brightness(60%);
 }
+/* ABOUT US */
+
 /* TIENDA */
 .store-container {
 	max-width: 1400px;
@@ -278,9 +358,32 @@ h1 {
 }
 
 footer {
+	margin-top: 50px;
 	width: 100%;
 	height: 100px;
-	border: 1px solid black;
+	background-color: beige;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.social-media {
+	height: 60%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.line-footer {
+	width: 85%;
+	height: 1px;
+	background-color: black;
+	filter: opacity(30%);
+}
+.content-footer > h3 {
+	font-size: 15px;
+	font-weight: 400;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -297,18 +400,29 @@ footer {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
+	.menuppal {
+		width: 100%;
+	}
+	.portada {
+		height: 100vh;
+	}
 	.hero {
 		text-align: center;
 	}
 	.nav-container > ul {
 		display: none;
 	}
+	.grid-box > div {
+		height: 20vh;
+	}
 	.grid-box {
+		height: auto;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, 1fr);
 		grid-column-gap: 0px;
 		grid-row-gap: 15px;
+		margin-bottom: 50px;
 	}
 
 	.div1 {

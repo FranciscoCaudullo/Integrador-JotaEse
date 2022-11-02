@@ -1,3 +1,14 @@
+function toggleMenu(event) {
+	this.classList.toggle("is-active");
+	menuHamburguer.classList.toggle("is_active");
+	event.preventDefault();
+}
+const closeMenu = () => {
+	if (menuHamburguer.classList.contains("is_active")) {
+		menuHamburguer.classList.remove("is_active");
+	}
+};
+
 // Desestructura el item
 const desestructuringItem = (elementToRender) => {
 	const { name, price, id, img } = elementToRender;
@@ -6,7 +17,8 @@ const desestructuringItem = (elementToRender) => {
     <div class="info-item">
         <h3>${name}</h3>
         <span>$${price}</span>
-        <button id="btnBuy">Buy</button>
+        <button id="btnBuy" data-name="${name}"
+		data-price="${price}" data-id="${id}" data-img="${img}" data-quantity = 1>Buy</button>
     </div>
 </li>`;
 };
@@ -67,6 +79,8 @@ const changeBtnActive = (elementClicked) => {
 const init = () => {
 	categoriesList.addEventListener("click", detectingClick);
 	renderRandom();
+	document.addEventListener("scroll", closeMenu);
+	menuhamburguerIcon.addEventListener("click", toggleMenu);
 };
 
 init();
