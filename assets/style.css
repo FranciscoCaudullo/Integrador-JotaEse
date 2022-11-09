@@ -8,6 +8,26 @@
 	font-family: "Montserrat", sans-serif;
 	max-width: 100vw;
 }
+
+:root {
+	/* bg colors */
+	--background: #02050e;
+	--primary: #1e50ff;
+	--secondary: #272d37;
+	--btn-bg: #050d26;
+	--bg-azul-10: #e9eeff;
+	--bg-white: #fff;
+	--bg-electric: #f0fbff;
+	--nav-bg: #0f1525;
+
+	/* Text colors */
+	--text-gray: #adb9c7;
+	--text-white: #f3f4f6;
+
+	/* Decoration */
+	--fire: #ff6d00;
+	--electric: #64d3ff;
+}
 button {
 	cursor: pointer;
 }
@@ -30,14 +50,247 @@ body {
 .logo > span > img {
 	width: 60px;
 }
-.hamburger {
+.icons-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 40px;
+}
+.cartIcon > img {
+	width: 30px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.disabled {
+	background-color: var(--text-gray);
+	color: white;
+	cursor: not-allowed;
+	border: none;
+}
+.disabled:hover {
+	background-color: var(--text-gray);
+	color: white;
+	cursor: not-allowed;
+	border: none;
+}
+.add-modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: black;
+	border-top: 1px solid black;
+	background-color: white;
+
 	position: fixed;
-	background-color: transparent;
+	bottom: 0;
 	left: 0;
-	top: 0;
+	width: 100%;
+	height: 90px;
+	transition: all 0.5s ease-out;
+
+	transform: translateY(200%);
+}
+
+.active-modal {
+	transform: translateY(0);
+	transition: all 0.5s ease-in;
+}
+.open-cart {
+	transform: translate(0%);
+	transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.empty-msg {
+	color: var(--text-gray);
+	font-size: 14px;
+}
+.cart {
+	position: absolute;
+	top: 65px;
+	right: 0;
+	padding: 50px 30px;
+	background: linear-gradient(to bottom, #679475, white);
+	border-left: 1px solid var(--nav-bg);
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	height: calc(100vh - 65px);
+	z-index: 2;
+	min-width: 375px;
+	transform: translate(200%);
+	transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.cart-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	overflow-y: auto;
+}
+.cart-container::-webkit-scrollbar {
+	display: none;
+}
+
+.cart h2 {
+	color: var(--text-white);
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.cart-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	background-color: #2323234e;
+	padding: 20px;
+	border: 1px solid #333;
+	border-radius: 10px;
+}
+
+.cart-item img {
+	height: 65px;
+	width: 65px;
+}
+
+.item-info {
+	display: flex;
+	flex-direction: column;
+	min-width: 110px;
+}
+
+.item-title {
+	color: var(--text-white);
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.item-bid {
+	color: var(--text-gray);
+	font-weight: 300;
+	font-size: 12px;
+}
+
+.item-price {
+	background-clip: text;
+	background-color: white;
+	color: transparent;
+	-webkit-background-clip: text;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.item-handler {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.quantity-handler {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 8px;
+	border-radius: 5px;
+	color: var(--text-white);
+	font-weight: 400;
+}
+
+.item-quantity {
+	color: var(--text-gray);
+}
+.quantity-handler {
+	transition: all 0.2s ease-in;
+}
+
+.quantity-handler:hover {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	transition: all 0.2s ease-in;
+}
+
+/*Botones comprar(carrito) y add(producto) y BENUCBER(Hero)*/
+.btn-add {
+	transition: all 0.2s ease-out;
+}
+
+.up {
+	border: 1px solid #333;
+}
+
+.down {
+	background-color: var(--secondary);
+	border: 1px solid #333;
+}
+
+.divider {
+	margin-top: 20px;
+	border: 0.5px solid 333;
+	width: 100%;
+}
+
+.cart-total {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 100%;
+}
+
+.cart-total p {
+	color: black;
+	font-weight: 700;
+}
+
+.cart-total span {
+	color: white;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+/*Toggle del carro*/
+.open-cart {
+	transform: translate(0%);
+	transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+.btn-add,
+.btn-buy,
+.btn-delete {
+	cursor: pointer;
+	padding: 10px 35px;
+	color: black;
+	border-radius: 10px;
+	border: none;
+	transition: 0.3s all ease-out;
+	background: white;
+}
+.empty-msg {
+	color: var(--text-gray);
+	font-size: 15px;
+}
+.overlay {
+	position: absolute;
+	top: 65px;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 1; /*Para que quede por encima del resto de las cosas*/
+
+	/*Efecto de Glassmorphismo*/
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	display: none;
+}
+.hamburger {
+	background-color: transparent;
+
 	height: 30px;
 	width: 30px;
-	padding: 20px 20px;
+	padding: 10px;
 	transform: translate3d(0, 0, 0);
 	transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
 	z-index: 1002;

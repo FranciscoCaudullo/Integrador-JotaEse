@@ -17,7 +17,7 @@ const desestructuringItem = (elementToRender) => {
     <div class="info-item">
         <h3>${name}</h3>
         <span>$${price}</span>
-        <button id="btnBuy" data-name="${name}"
+        <button id="btnBuy" data-name="${name}" class="btn-add"
 		data-price="${price}" data-id="${id}" data-img="${img}" data-quantity = 1>Buy</button>
     </div>
 </li>`;
@@ -81,6 +81,11 @@ const init = () => {
 	renderRandom();
 	document.addEventListener("scroll", closeMenu);
 	menuhamburguerIcon.addEventListener("click", toggleMenu);
+	cartIcon.addEventListener("click", toggleCart);
+	listItems.addEventListener("click", addProduct);
+	checkCartState();
+	deleteBtn.addEventListener("click", deleteCart);
+	document.addEventListener("DOMContentLoaded", showTotal);
 };
 
 init();
