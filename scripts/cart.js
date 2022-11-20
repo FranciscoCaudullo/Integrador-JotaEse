@@ -6,13 +6,16 @@ const saveLocalStorage = (cartList) => {
 
 const toggleCart = () => {
 	cartMenu.classList.toggle("open-cart");
-	if (barsMenu.classList.contains("open-menu")) {
-		barsMenu.classList.remove("open-menu");
-		return;
+	if (menuHamburguer.classList.contains("is_active")) {
+		menuHamburguer.classList.remove("is_active");
 	}
 	overlay.classList.toggle("show-overlay");
 };
-
+const closeCartFun = () => {
+	if (cartMenu.classList.contains("open-cart")) {
+		cartMenu.classList.remove("open-cart");
+	}
+};
 const renderCartProduct = (cartProduct) => {
 	const { id, name, price, img, quantity } = cartProduct;
 	console.log(cartProduct);

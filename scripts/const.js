@@ -13,8 +13,10 @@ const buyBtn = document.querySelector(".btn-buy");
 const btnLoad = document.querySelector(".btn-load");
 const deleteBtn = document.querySelector(".btn-delete");
 const successModal = document.querySelector(".add-modal");
-const overlay = document.querySelector(".overlay");
+const overlay = document.querySelectorAll(".overlay");
 const barsMenu = document.querySelector(".navbar-list");
+const closeMenuButton = document.getElementById("closeMenu");
+const closeCartButton = document.getElementById("closeCart");
 
 const photos = [
 	"./assets/img/japan.jpg",

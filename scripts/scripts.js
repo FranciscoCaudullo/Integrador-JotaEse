@@ -1,6 +1,7 @@
 function toggleMenu(event) {
 	this.classList.toggle("is-active");
 	menuHamburguer.classList.toggle("is_active");
+	closeCartFun();
 	event.preventDefault();
 }
 const closeMenu = () => {
@@ -84,8 +85,12 @@ const init = () => {
 	cartIcon.addEventListener("click", toggleCart);
 	listItems.addEventListener("click", addProduct);
 	checkCartState();
+	buyBtn.addEventListener("click", completeBuy);
 	deleteBtn.addEventListener("click", deleteCart);
 	document.addEventListener("DOMContentLoaded", showTotal);
+	closeMenuButton.addEventListener("click", toggleMenu);
+	document.addEventListener("scroll", closeCartFun);
+	closeCartButton.addEventListener("click", toggleCart);
 };
 
 init();
