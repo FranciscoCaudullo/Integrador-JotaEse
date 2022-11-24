@@ -180,12 +180,6 @@ body {
 	font-size: 14px;
 }
 
-.item-bid {
-	color: var(--text-gray);
-	font-weight: 300;
-	font-size: 12px;
-}
-
 .item-price {
 	background-clip: text;
 	background-color: white;
@@ -231,14 +225,10 @@ body {
 	transition: all 0.2s ease-out;
 }
 
-.up {
-	border: 1px solid #333;
-	background-color: var(--secondary);
-}
-
+.up,
 .down {
-	background-color: var(--secondary);
 	border: 1px solid #333;
+	background-color: var(--secondary);
 }
 
 .divider {
@@ -367,7 +357,7 @@ body {
 .menuppal ul li {
 	list-style: none;
 	text-align: center;
-	font-family: Verdadna, Arial, Helvetica;
+	font-family: Verdana, Arial, Helvetica;
 	color: white;
 	font-size: 1.5rem;
 	line-height: 3em;
@@ -465,7 +455,8 @@ nav {
 }
 .line {
 	width: 50%;
-	height: 3px;
+	padding: 0.5px;
+	margin: 0% auto;
 	background-color: black;
 }
 .hero > h1 {
@@ -536,7 +527,6 @@ nav {
 	opacity: 1;
 	backdrop-filter: brightness(60%);
 }
-/* ABOUT US */
 
 /* TIENDA */
 .store-container {
@@ -653,19 +643,32 @@ footer {
 	font-weight: 400;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+	.cart-item img {
+		height: 55px;
+		width: 55px;
+	}
+	.item-title {
+		font-size: 12px;
+	}
+	.item-bid {
+		font-size: 1000px;
+	}
+	.item-price {
+		font-size: 14px;
+	}
+	.item-handler {
+		gap: 15px;
+	}
+	.quantity-handler {
+		padding: 1px 7px;
+	}
+	.cart {
+		width: 100vw;
+		left: 0%;
+	}
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
 	.menuppal {
 		width: 100%;
@@ -680,7 +683,7 @@ footer {
 		display: none;
 	}
 	.grid-box > div {
-		height: 20vh;
+		height: 15vh;
 	}
 	.grid-box {
 		height: auto;
@@ -734,8 +737,4 @@ footer {
 	.info-item {
 		text-align: center;
 	}
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

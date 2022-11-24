@@ -17,6 +17,8 @@ const overlay = document.querySelectorAll(".overlay");
 const barsMenu = document.querySelector(".navbar-list");
 const closeMenuButton = document.getElementById("closeMenu");
 const closeCartButton = document.getElementById("closeCart");
+const cartItem = document.querySelectorAll("#cart-item");
+const upButton = document.getElementById("down");
 
 const photos = [
 	"./assets/img/japan.jpg",
