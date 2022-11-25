@@ -87,7 +87,6 @@ const toggleCart = () => {
 	if (menuHamburguer.classList.contains("is_active")) {
 		menuHamburguer.classList.remove("is_active");
 	}
-	overlay.classList.toggle("show-overlay");
 };
 const closeCartFun = () => {
 	if (cartMenu.classList.contains("open-cart")) {

@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="assets/style.css" />
 	</head>
 	<body>
+		
 		<nav>
 			<div class="nav-container">
 				<div class="logo">
@@ -37,14 +38,15 @@
 					</div>
 					<button class="btn-buy">Comprar</button>
 					<button class="btn-delete">Vaciar carrito</button>
+					
 				  </div>
-				  <div class="overlay"></div>
+				 
 				</nav>
 				<div class="menuppal">
 					<div class="closeButton" id="closeMenu">X</div>
 					<ul>
 						
-						<li><a href="#listItems">Shop <div class="line"></div></a></li>
+						<li><a href="#shop">Shop <div class="line"></div></a></li>
 						
 						<li><a href="login.html">Log In <div class="line"></div></a></li>
 						
@@ -64,20 +66,21 @@
 				reality.
 			</h2>
 			<div class="line"></div>
-			<button>Start create</button>
+			<button><a href="#shop">Start create</a></button>
 		</div>
-		<div class="grid-box">
+		<div class="grid-box" >
 			<div class="div1"><h3>Artisan Keycaps</h3></div>
 			<div class="div2"><h3>Set of Keycaps</h3></div>
 			<div class="div3"><h3>Accesories</h3></div>
 			<div class="div4"><h3>Switches</h3></div>
+			
 		</div>
-
-		<div class="store-container">
+<div class="shop" id="shop"></div>
+		<div class="store-container" >
 			<div class="centrarstore">
 
 			
-			<div class="categories-container">
+			<div class="categories-container" >
 				<h2>Categorys</h2>
 				<ul id="categoriesList">
 					<li data-category="popular" class="category active">
@@ -105,7 +108,6 @@
 			</div>
 		</footer>
 		<script src="scripts/const.js"></script>
-		<script src="scripts/cart.js"></script>
 		<script src="scripts/scripts.js"></script>
 		
 	</body>

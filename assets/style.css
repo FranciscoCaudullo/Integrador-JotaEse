@@ -282,21 +282,6 @@ body {
 	color: var(--text-gray);
 	font-size: 18px;
 }
-.overlay {
-	position: absolute;
-	top: 65px;
-	left: 0;
-	height: 100vh;
-	width: 100%;
-	z-index: 1; /*Para que quede por encima del resto de las cosas*/
-
-	/*Efecto de Glassmorphismo*/
-	background: rgba(255, 255, 255, 0.05);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	display: none;
-}
 .hamburger {
 	background-color: transparent;
 
@@ -446,7 +431,7 @@ nav {
 /* HEROOOOOOOO */
 .hero {
 	display: flex;
-	height: 20vh;
+	height: 23vh;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -472,10 +457,14 @@ nav {
 	border: none;
 	background-color: #ff5e16;
 	border-radius: 10px;
-	font-size: 18px;
-	font-weight: 600;
 	cursor: pointer;
 }
+.hero > button > a {
+	font-size: 18px;
+	font-weight: 600;
+	color: black;
+}
+
 /* GRID SECTION */
 .grid-box {
 	display: grid;
